@@ -10,6 +10,10 @@ class MarketController extends Controller
 {
     public function market(){
         $data = RequestMarket::orderBy('customer','asc')->get(['id','customer','product','qty','satuan']);
-        return response()->json(['status'=>200,'data'=>$data,'msg'=>'Request customer on marker'],200);
+        return response()->json([
+            'status'    => 200,
+            'msg'       => 'Request customer on marker',
+            'data'      => $data,
+        ],200);
     }
 }
