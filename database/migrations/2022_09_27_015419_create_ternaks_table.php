@@ -15,6 +15,12 @@ class CreateTernaksTable extends Migration
     {
         Schema::create('ternaks', function (Blueprint $table) {
             $table->id();
+            $table->string('name',100);
+            $table->integer('price');
+            $table->integer('min_benefit');
+            $table->integer('max_benefit');
+            $table->integer('duration');
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
